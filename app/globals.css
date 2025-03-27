@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    /* Crimson and cream theme */
+    --background: 355 89% 25%; /* #770713 */
+    --foreground: 0 0% 100%; /* White */
+
+    --card: 39 67% 91%; /* #FBEFD4 */
+    --card-foreground: 355 89% 25%; /* #770713 */
+
+    --popover: 39 67% 91%;
+    --popover-foreground: 355 89% 25%;
+
+    --primary: 355 89% 25%; /* #770713 */
+    --primary-foreground: 0 0% 100%; /* White */
+
+    --secondary: 39 67% 91%; /* #FBEFD4 */
+    --secondary-foreground: 355 89% 25%; /* #770713 */
+
+    --muted: 39 67% 85%;
+    --muted-foreground: 355 89% 35%;
+
+    --accent: 39 67% 91%; /* #FBEFD4 */
+    --accent-foreground: 355 89% 25%; /* #770713 */
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 39 67% 85%;
+    --input: 39 67% 85%;
+    --ring: 355 89% 25%;
+
+    --radius: 0.5rem;
+  }
+
+  .light {
+    /* Same as default for consistency */
+    --background: 355 89% 25%;
+    --foreground: 0 0% 100%;
+
+    --card: 39 67% 91%;
+    --card-foreground: 355 89% 25%;
+
+    --popover: 39 67% 91%;
+    --popover-foreground: 355 89% 25%;
+
+    --primary: 355 89% 25%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 39 67% 91%;
+    --secondary-foreground: 355 89% 25%;
+
+    --muted: 39 67% 85%;
+    --muted-foreground: 355 89% 35%;
+
+    --accent: 39 67% 91%;
+    --accent-foreground: 355 89% 25%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 39 67% 85%;
+    --input: 39 67% 85%;
+    --ring: 355 89% 25%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom breakpoint for extra small devices */
+@layer utilities {
+  @variants responsive {
+    @media (min-width: 480px) {
+      .xs\:flex-row {
+        flex-direction: row;
+      }
+      .xs\:space-y-0 {
+        margin-top: 0;
+      }
+      .xs\:space-x-2 > * + * {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}
+
+/* Custom utility classes */
+@layer components {
+  .crimson-bg {
+    background-color: #770713;
+  }
+
+  .cream-bg {
+    background-color: #fbefd4;
+  }
+}
+
